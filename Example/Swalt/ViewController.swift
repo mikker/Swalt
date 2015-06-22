@@ -1,24 +1,41 @@
-//
-//  ViewController.swift
-//  Swalt
-//
-//  Created by Mikkel Malmberg on 06/21/2015.
-//  Copyright (c) 06/21/2015 Mikkel Malmberg. All rights reserved.
-//
-
 import UIKit
+import Swalt
+
+struct Actions {
+    static let Increment = "INCREMENT"
+}
+
+class ClicksStore: SwaltStore {
+    static let instance = ClicksStore()
+    
+    override init() {
+        super.init()
+        
+        bindAction(Actions.Increment) { payload in
+            let current = self.state!["count"]! as! Int
+            self.state = ["count": current + 1]
+        }
+    }
+    
+    override func initialState() -> [String: Any?] {
+        return ["count": 0]
+    }
+}
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var countLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        ClicksStore.instance.listen { state in
+            let count = state!["count"]!!
+            self.countLabel.text = String(count)
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func doIt() {
+        Swalt.instance.dispatch(Actions.Increment, payload: nil)
     }
-
 }
-
