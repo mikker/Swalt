@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "62D86CDD8A141E14B38A7E49CCB1D5D3483DC1C8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "62D86CDD8A141E14B38A7E49CCB1D5D3483DC1C8" : 0,
+    "F6F601EA19A5408C512C9D93FBBF7127D92A5145" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7C722023-90AF-4838-8125-6D11815E27D8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "62D86CDD8A141E14B38A7E49CCB1D5D3483DC1C8" : "Swalt\/",
+    "F6F601EA19A5408C512C9D93FBBF7127D92A5145" : "Dispatcher\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Swalt",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 203,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/Swalt.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:mikker\/Swalt.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "62D86CDD8A141E14B38A7E49CCB1D5D3483DC1C8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:mikker\/Dispatcher.swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F6F601EA19A5408C512C9D93FBBF7127D92A5145"
+    }
+  ]
+}
