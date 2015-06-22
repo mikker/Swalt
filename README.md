@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/Swalt.svg?style=flat)](http://cocoapods.org/pods/Swalt)
 [![Platform](https://img.shields.io/cocoapods/p/Swalt.svg?style=flat)](http://cocoapods.org/pods/Swalt)
 
-A minimal Flux implementation written in pure Swift 2. Inspired by [alt](/goatslacker/alt).
+A minimal Flux implementation written in pure Swift 2. Inspired by [alt](https://github.com/goatslacker/alt).
 
 ## Usage
 
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
 
 ## Requirements
 
-* [Dispatcher](/mikker/Dispatcher)
+* [Dispatcher](https://github.com/mikker/Dispatcher)
 
 ## Installation
 
