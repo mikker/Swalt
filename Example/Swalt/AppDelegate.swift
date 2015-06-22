@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Swalt
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

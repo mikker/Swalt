@@ -1,6 +1,0 @@
-framework module Swalt {
-  umbrella header "Pods-Swalt_Example-Swalt-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -1,11 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
+pod "Dispatcher", "~> 0.1.2"
+pod "Swalt", :path => "../"
+
 target 'Swalt_Example', :exclusive => true do
-  pod "Dispatcher", "~> 0.1.1"
-  pod "Swalt", :path => "../"
 end
 
 target 'Swalt_Tests', :exclusive => true do
-  pod "Swalt", :path => "../"
 end

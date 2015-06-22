@@ -1,6 +1,0 @@
-framework module Pods_Swalt_Tests {
-  umbrella header "Pods-Swalt_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}
