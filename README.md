@@ -57,6 +57,15 @@ class ViewController: UIViewController {
 }
 ```
 
+## Todo
+
+- [ ] Tests!
+- [ ] Less class-y, more protocol-y
+- [ ] Bundle everything up in shared Swaft instance (no singletons)
+- [ ] Snapshots (easily serialize and restore **all** state)
+- [ ] `state!["count"]!!` looks silly. Maybe structs for state?
+- [ ] `let action = "ACTION"` is unhandy. Actual enums maybe?
+
 ## Requirements
 
 * [Dispatcher](https://github.com/mikker/Dispatcher)
