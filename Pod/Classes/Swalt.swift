@@ -5,7 +5,7 @@ public class Swalt : Receiver {
 
     public override init() {
         super.init()
-        dispatcher = Dispatcher()
+        dispatcher = Dispatcher.instance
         register()
     }
     

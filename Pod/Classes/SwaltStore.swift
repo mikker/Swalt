@@ -1,9 +1,9 @@
 import Dispatcher
 
-let prefix = "ID_"
-var lastId = 1
-
 public class SwaltStore : Receiver {
+    let prefix = "ID_"
+    var lastId = 1
+    
     let swalt = Swalt.instance
     
     var listeners: [String: ([String: Any?]?) -> Void] = [:]

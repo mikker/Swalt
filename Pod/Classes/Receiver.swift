@@ -1,7 +1,7 @@
 import Dispatcher
 
 public class Receiver {
-    var dispatcher: Dispatcher!
+    public var dispatcher: Dispatcher!
     
     private var dispatchToken: String!
     private var actions: [String: (Any?) -> Void] = [:]
@@ -16,7 +16,7 @@ public class Receiver {
         dispatchToken = self.dispatcher.register(handleDispatch)
     }
     
-    public func bindAction(action: String, handler: (Any?) -> Void) {
+    public func bindAction(action: String, handler: (payload: Any?) -> Void) {
         actions[action] = handler
     }
     

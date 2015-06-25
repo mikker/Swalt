@@ -1,6 +1,6 @@
 PODS:
   - Dispatcher (0.1.2)
-  - Swalt (0.1.0):
+  - Swalt (0.1.1):
     - Dispatcher (~> 0.1)
 
 DEPENDENCIES:
@@ -13,6 +13,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Dispatcher: 23cca0e9ac5e836c794fc2590f5cd98ca499fb0e
-  Swalt: 5a58f5c742225a612a8af927cbf91de47af6d4b9
+  Swalt: d567e29e8f5d5b470467fab4558b260bb05fafd0
 
 COCOAPODS: 0.37.2

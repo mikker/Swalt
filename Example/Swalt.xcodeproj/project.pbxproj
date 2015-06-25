@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38586B1006A1E4F61E78CAD3 /* Pods_Swalt_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D15CAA82D20909F8412B6F /* Pods_Swalt_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		2E6F2A5E875998EC3743C602 /* Pods_Swalt_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C077803EE67F7FC7C6296D4 /* Pods_Swalt_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		429616A11B3BF9B000A514B4 /* SwaltStoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296169F1B3BF9A000A514B4 /* SwaltStoreTest.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		7FAA096EEA499FAE61B007DF /* Pods_Swalt_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4606D1604DD85E9F0CEF5BDF /* Pods_Swalt_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		607FACEC1AFB9204008FA782 /* SwaltTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* SwaltTest.swift */; };
 		CB3E65FC871F81DFE5B1CA32 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C65611F3F03FC12671919E36 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -29,7 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4606D1604DD85E9F0CEF5BDF /* Pods_Swalt_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swalt_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C077803EE67F7FC7C6296D4 /* Pods_Swalt_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swalt_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4296169F1B3BF9A000A514B4 /* SwaltStoreTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwaltStoreTest.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Swalt_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swalt_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,14 +40,13 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Swalt_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swalt_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		607FACEB1AFB9204008FA782 /* SwaltTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwaltTest.swift; sourceTree = "<group>"; };
 		65202F52A4FE32EF2E4D0C32 /* Swalt.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Swalt.podspec; path = ../Swalt.podspec; sourceTree = "<group>"; };
-		7A68D96BCA6528955FF2CD19 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		713B1DB289486FE157C208F4 /* Pods-Swalt_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swalt_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swalt_Example/Pods-Swalt_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		BC484B3D720B144A1E230AF1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C65611F3F03FC12671919E36 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DACB332913F03D7245EFF8A1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		CE1AAD328DA8045F640DAEE8 /* Pods-Swalt_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swalt_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swalt_Example/Pods-Swalt_Example.release.xcconfig"; sourceTree = "<group>"; };
 		DF49F4267055F736AAC32289 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		F5D15CAA82D20909F8412B6F /* Pods_Swalt_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swalt_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38586B1006A1E4F61E78CAD3 /* Pods_Swalt_Example.framework in Frameworks */,
 				CB3E65FC871F81DFE5B1CA32 /* Pods.framework in Frameworks */,
+				2E6F2A5E875998EC3743C602 /* Pods_Swalt_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,22 +63,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FAA096EEA499FAE61B007DF /* Pods_Swalt_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4649747E46BF63223637FB5E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7A68D96BCA6528955FF2CD19 /* Pods.debug.xcconfig */,
-				DACB332913F03D7245EFF8A1 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -86,8 +76,8 @@
 				607FACD21AFB9204008FA782 /* Example for Swalt */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				4649747E46BF63223637FB5E /* Pods */,
 				A3FCBDB9F97B6309ADE38819 /* Frameworks */,
+				D3CE6DBFD9CFA70A3E900989 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,7 +115,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				607FACEB1AFB9204008FA782 /* SwaltTest.swift */,
+				4296169F1B3BF9A000A514B4 /* SwaltStoreTest.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -152,11 +143,19 @@
 		A3FCBDB9F97B6309ADE38819 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F5D15CAA82D20909F8412B6F /* Pods_Swalt_Example.framework */,
-				4606D1604DD85E9F0CEF5BDF /* Pods_Swalt_Tests.framework */,
 				C65611F3F03FC12671919E36 /* Pods.framework */,
+				0C077803EE67F7FC7C6296D4 /* Pods_Swalt_Example.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3CE6DBFD9CFA70A3E900989 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				713B1DB289486FE157C208F4 /* Pods-Swalt_Example.debug.xcconfig */,
+				CE1AAD328DA8045F640DAEE8 /* Pods-Swalt_Example.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,12 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Swalt_Example" */;
 			buildPhases = (
-				E7B554DA45155C69BB6C8893 /* Check Pods Manifest.lock */,
+				1A2AB9FB6BD301AE7AEF5357 /* Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				0C92A4EAC469F112431C5C8C /* Embed Pods Frameworks */,
-				42B16D9F3817CBB69519C5A8 /* Copy Pods Resources */,
+				307C0636EFD3C482DFDFFCC5 /* Embed Pods Frameworks */,
+				4B68431C446054FC2B2A32FD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,37 +258,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0C92A4EAC469F112431C5C8C /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		42B16D9F3817CBB69519C5A8 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E7B554DA45155C69BB6C8893 /* Check Pods Manifest.lock */ = {
+		1A2AB9FB6BD301AE7AEF5357 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -302,6 +271,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		307C0636EFD3C482DFDFFCC5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swalt_Example/Pods-Swalt_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B68431C446054FC2B2A32FD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swalt_Example/Pods-Swalt_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -320,7 +319,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				607FACEC1AFB9204008FA782 /* SwaltTest.swift in Sources */,
+				429616A11B3BF9B000A514B4 /* SwaltStoreTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,7 +438,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A68D96BCA6528955FF2CD19 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 713B1DB289486FE157C208F4 /* Pods-Swalt_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Swalt/Info.plist;
@@ -451,7 +451,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DACB332913F03D7245EFF8A1 /* Pods.release.xcconfig */;
+			baseConfigurationReference = CE1AAD328DA8045F640DAEE8 /* Pods-Swalt_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Swalt/Info.plist;
@@ -464,6 +464,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 713B1DB289486FE157C208F4 /* Pods-Swalt_Example.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
