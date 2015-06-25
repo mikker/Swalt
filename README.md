@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         ClicksStore.instance.listen { state in
-            let count = state!["count"]!!
+            let count = state!["count"] as! Int
             self.countLabel.text = String(count)
         }
     }
@@ -59,11 +59,11 @@ class ViewController: UIViewController {
 
 ## Todo
 
-- [ ] Tests!
+- [x] Tests!
 - [ ] Less class-y, more protocol-y
 - [ ] Bundle everything up in shared Swaft instance (no singletons)
 - [ ] Snapshots (easily serialize and restore **all** state)
-- [ ] `state!["count"]!!` looks silly. Maybe structs for state?
+- [ ] `state!["count"]! as! Int` looks silly. Maybe structs for state?
 - [ ] `let action = "ACTION"` is unhandy. Actual enums maybe?
 
 ## Requirements

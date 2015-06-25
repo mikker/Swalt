@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         ClicksStore.instance.listen { state in
-            let count = state!["count"]!!
+            let count = state!["count"] as! Int
             self.countLabel.text = String(count)
         }
     }
