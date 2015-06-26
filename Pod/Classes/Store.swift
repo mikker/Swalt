@@ -18,7 +18,7 @@ public class Store : Receiver {
         dispatcher = swalt.dispatcher
         register()
         
-        ({ self.state = self.initialState() })()
+        self.state = self.initialState()
     }
     
     public func initialState() -> [String: Any?] {
