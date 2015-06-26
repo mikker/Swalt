@@ -5,6 +5,7 @@ import Swalt
 class SwaltTest: XCTestCase {
     
     var swalt: Swalt!
+    let action = Action("MY_ACTION")
     
     override func setUp() {
         swalt = Swalt()
@@ -24,17 +25,15 @@ class SwaltTest: XCTestCase {
         }
         dispatcher.register(callback)
         
-        swalt.dispatch("MY_ACTION", payload: ["test": 1])
+        swalt.dispatch(action, payload: ["test": 1])
     }
     
     func testSwaltBindAction() {
-        let action = "MY_ACTIION"
-
         func callback(payload: Any?) {
             let payload = payload as! [String: Int]
             XCTAssertEqual(payload["test"]!, 1)
         }
-        swalt.bindAction(action, handler: callback)
+        swalt.bindAction(action, callback: callback)
         
         let payload: [String: Int] = ["test": 1]
         swalt.dispatch(action, payload: payload)

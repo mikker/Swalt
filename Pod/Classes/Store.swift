@@ -25,10 +25,11 @@ public class Store : Receiver {
         return [:]
     }
     
-    public func listen(handler: Handler) -> String {
+    public func listen(callback: Any? -> Void) -> String {
         let id = "\(prefix)\(lastId++)"
+        let handler = Handler(callback)
         listeners[id] = handler
-        handler.call(state)
+        handler.call(state) // send current state right away
         return id
     }
 

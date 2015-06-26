@@ -15,8 +15,8 @@ public func ==(lhs: Action, rhs: Action) -> Bool {
 }
 
 public struct Handler {
-    let call: (Any?) -> Void
-    public init(_ handler: (payload: Any?) -> Void) {
+    let call: Any? -> Void
+    public init(_ handler: Any? -> Void) {
         self.call = handler
     }
 }

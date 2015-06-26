@@ -18,14 +18,15 @@ public class Receiver {
         dispatchToken = self.dispatcher.register(handleDispatch)
     }
     
-    public func bindAction(action: Action, handler: Handler) {
-        actions[action] = handler
+    public func bindAction(action: Action, callback: Any? -> Void) {
+        actions[action] = Handler(callback)
     }
     
     func handleDispatch(message: Any?) {
         let message = message as! (action: String, payload: Any?)
+        let messageAction = Action(message.action)
         for (action, handler) in actions {
-            if action.name == message.action {
+            if action == messageAction {
                 handler.call(message.payload)
             }
         }
