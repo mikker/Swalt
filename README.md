@@ -66,10 +66,6 @@ class ViewController: UIViewController {
 
 ## Todo
 
-- [x] Tests!
-- [x] Bundle state up in shared Swaft instance (no singleton stores)
-- [x] `state!["count"]! as! Int` looks silly. Maybe structs for state?
-- [x] `let action = "ACTION"` is unhandy. Actual enums maybe?
 - [ ] Snapshots (easily serialize and restore **all** state)
 
 ## Requirements
