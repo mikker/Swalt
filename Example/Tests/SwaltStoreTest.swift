@@ -10,8 +10,8 @@ class StoreTest: XCTestCase {
     var store: Store!
     
     class MyStore: Store {
-        override init() {
-            super.init()
+        required init(_ swalt: Swalt) {
+            super.init(swalt)
             
             bindAction(action) { _ in
                 let current = self.state!["count"]! as! Int
@@ -24,8 +24,9 @@ class StoreTest: XCTestCase {
     }
     
     override func setUp() {
-        swalt = Swalt.instance
-        store = MyStore()
+        swalt = Swalt()
+        swalt.addStore(MyStore)
+        store = swalt.getStore(MyStore)
     }
     
     func testIncrementState() {

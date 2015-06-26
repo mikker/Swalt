@@ -4,7 +4,7 @@ public class Store : Receiver {
     let prefix = "ID_"
     var lastId = 1
     
-    let swalt = Swalt.instance
+    let swalt: Swalt
     
     var listeners: [String: Handler] = [:]
     public var state: [String: Any?]? {
@@ -13,8 +13,11 @@ public class Store : Receiver {
         }
     }
     
-    public override init() {
+    public required init(_ swalt: Swalt) {
+        self.swalt = swalt
+
         super.init()
+        
         dispatcher = swalt.dispatcher
         register()
         

@@ -6,10 +6,8 @@ struct CounterActions {
 }
 
 class ClicksStore: Store {
-    static let instance = ClicksStore()
-    
-    override init() {
-        super.init()
+    required init(_ swalt: Swalt) {
+        super.init(swalt)
         
         bindAction(CounterActions.Increment) { payload in
             let current = self.state!["count"]! as! Int
@@ -22,6 +20,15 @@ class ClicksStore: Store {
     }
 }
 
+class Flux: Swalt {
+    static let shared = Flux()
+    
+    override init() {
+        super.init()
+        addStore(ClicksStore.self)
+    }
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var countLabel: UILabel!
@@ -29,7 +36,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        ClicksStore.instance.listen { state in
+        Flux.shared.getStore(ClicksStore).listen { state in
             let state = state as! [String: Any?]
             let count = state["count"] as! Int
             self.countLabel.text = String(count)
