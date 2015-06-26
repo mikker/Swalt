@@ -1,8 +1,10 @@
 import Dispatcher
 
+public typealias StoreType = String
+
 public class Swalt: Receiver {
     public static let instance = Swalt()
-    var stores: [String: Store] = [:]
+    var stores: [StoreType: Store] = [:]
     
     public override init() {
         super.init()
@@ -19,17 +21,19 @@ public class Swalt: Receiver {
         dispatcher.dispatch(message)
     }
     
-    public func addStore(type: Store.Type) {
-        let key = String(type)
-        if self.stores.keys.contains(key) {
-            preconditionFailure("Store of type \(key) already exists")
-        }
-        debugPrint(key)
-        self.stores[key] = type.init(self)
+    public func addStore(type: Store.Type) -> Store {
+        let key = StoreType(type)
+        
+        precondition(!self.stores.keys.contains(key), "Store of type \(key) already exists")
+        
+        let store = type.init(self)
+        self.stores[key] = store
+        return store
     }
     
     public func getStore(type: Store.Type) -> Store {
-        let key = String(type)
+        let key = StoreType(type)
+        
         if let store = stores[key] {
             return store
         } else {

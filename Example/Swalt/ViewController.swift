@@ -25,7 +25,7 @@ class Flux: Swalt {
     
     override init() {
         super.init()
-        addStore(ClicksStore.self)
+        addStore(ClicksStore)
     }
 }
 
