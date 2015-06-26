@@ -13,10 +13,3 @@ public struct Action: Hashable {
 public func ==(lhs: Action, rhs: Action) -> Bool {
     return lhs.name == rhs.name
 }
-
-public struct Handler {
-    let call: Any? -> Void
-    public init(_ handler: Any? -> Void) {
-        self.call = handler
-    }
-}
