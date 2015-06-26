@@ -1,9 +1,6 @@
 import Dispatcher
 
 public class Store : Receiver {
-    let prefix = "ID_"
-    var lastId = 1
-    
     let swalt: Swalt
     
     var listeners: [String: Handler] = [:]
@@ -29,11 +26,14 @@ public class Store : Receiver {
     }
     
     public func listen(callback: Any? -> Void) -> String {
-        let id = "\(prefix)\(lastId++)"
-        let handler = Handler(callback)
-        listeners[id] = handler
-        handler.call(state) // send current state right away
-        return id
+        if let id = swalt.dispatcher.tokenGenerator.next() {
+            let handler = Handler(callback)
+            listeners[id] = handler
+            handler.call(state) // send current state right away
+            return id
+        }
+        
+        preconditionFailure("\(object_getClass(self)).listen: Failed to generate token.")
     }
 
     public func unlisten(id: String) {
