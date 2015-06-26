@@ -1,11 +1,12 @@
 import Dispatcher
 
+public typealias State = [String: Any?]
+
 public class Store : Receiver {
     let swalt: Swalt
     
     var listeners: [String: State -> Void] = [:]
     
-    public typealias State = [String: Any?]
     public var state: State {
         didSet {
             self.notifyListeners()
@@ -21,10 +22,10 @@ public class Store : Receiver {
         dispatcher = swalt.dispatcher
         register()
         
-        self.state = self.initialState()
+        self.state = self.initialState
     }
     
-    public func initialState() -> State {
+    public var initialState: State {
         return [:]
     }
     

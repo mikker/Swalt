@@ -10,6 +10,10 @@ class StoreTest: XCTestCase {
     var store: Store!
     
     class MyStore: Store {
+        override var initialState: State {
+            return ["count": 0]
+        }
+
         required init(_ swalt: Swalt) {
             super.init(swalt)
             
@@ -17,9 +21,6 @@ class StoreTest: XCTestCase {
                 let current = self.state["count"]! as! Int
                 self.state = ["count": current + 1]
             }
-        }
-        override func initialState() -> [String : Any?] {
-            return ["count": 0]
         }
     }
     

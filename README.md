@@ -17,24 +17,31 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 import UIKit
 import Swalt
 
-struct Actions {
-    static let Increment = "INCREMENT"
+struct CounterActions {
+    static let Increment = Action("increment")
 }
 
 class ClicksStore: Store {
-    static let instance = ClicksStore()
+    override var initialState: State {
+        return ["count": 0]
+    }
 
-    override init() {
-        super.init()
+    required init(_ swalt: Swalt) {
+        super.init(swalt)
 
-        bindAction(Actions.Increment) { payload in
-            let current = self.state!["count"]! as! Int
+        bindAction(CounterActions.Increment) { _payload in
+            let current = self.state["count"]! as! Int
             self.state = ["count": current + 1]
         }
     }
+}
 
-    override func initialState() -> [String: Any?] {
-        return ["count": 0]
+class Flux: Swalt {
+    static let shared = Flux()
+
+    override init() {
+        super.init()
+        addStore(ClicksStore)
     }
 }
 
@@ -45,14 +52,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        ClicksStore.instance.listen { state in
-            let count = state!["count"] as! Int
+        Flux.shared.getStore(ClicksStore).listen { state in
+            let count = state["count"] as! Int
             self.countLabel.text = String(count)
         }
     }
 
     @IBAction func doIt() {
-        Swalt.instance.dispatch(Actions.Increment, payload: nil)
+        Swalt.instance.dispatch(CounterActions.Increment, payload: nil)
     }
 }
 ```
@@ -60,11 +67,10 @@ class ViewController: UIViewController {
 ## Todo
 
 - [x] Tests!
-- [ ] Less class-y, more protocol-y
-- [ ] Bundle everything up in shared Swaft instance (no singletons)
+- [x] Bundle state up in shared Swaft instance (no singleton stores)
+- [x] `state!["count"]! as! Int` looks silly. Maybe structs for state?
+- [x] `let action = "ACTION"` is unhandy. Actual enums maybe?
 - [ ] Snapshots (easily serialize and restore **all** state)
-- [ ] `state!["count"]! as! Int` looks silly. Maybe structs for state?
-- [ ] `let action = "ACTION"` is unhandy. Actual enums maybe?
 
 ## Requirements
 

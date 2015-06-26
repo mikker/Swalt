@@ -6,17 +6,17 @@ struct CounterActions {
 }
 
 class ClicksStore: Store {
+    override var initialState: State {
+        return ["count": 0]
+    }
+
     required init(_ swalt: Swalt) {
         super.init(swalt)
         
-        bindAction(CounterActions.Increment) { payload in
+        bindAction(CounterActions.Increment) { _payload in
             let current = self.state["count"]! as! Int
             self.state = ["count": current + 1]
         }
-    }
-    
-    override func initialState() -> Store.State {
-        return ["count": 0]
     }
 }
 
