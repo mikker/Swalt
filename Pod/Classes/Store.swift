@@ -1,12 +1,12 @@
 import Dispatcher
 
-public class SwaltStore : Receiver {
+public class Store : Receiver {
     let prefix = "ID_"
     var lastId = 1
     
     let swalt = Swalt.instance
     
-    var listeners: [String: ([String: Any?]?) -> Void] = [:]
+    var listeners: [String: Handler] = [:]
     public var state: [String: Any?]? {
         didSet {
             self.notifyListeners()
@@ -25,10 +25,10 @@ public class SwaltStore : Receiver {
         return [:]
     }
     
-    public func listen(handler: ([String: Any?]?) -> Void) -> String {
+    public func listen(handler: Handler) -> String {
         let id = "\(prefix)\(lastId++)"
         listeners[id] = handler
-        handler(state)
+        handler.call(state)
         return id
     }
 
@@ -38,7 +38,7 @@ public class SwaltStore : Receiver {
     
     private func notifyListeners() {
         for (_, handler) in listeners {
-            handler(self.state)
+            handler.call(self.state)
         }
     }
 }

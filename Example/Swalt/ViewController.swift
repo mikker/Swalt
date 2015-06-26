@@ -1,17 +1,17 @@
 import UIKit
 import Swalt
 
-struct Actions {
-    static let Increment = "INCREMENT"
+struct CounterActions {
+    static let Increment = Action("increment")
 }
 
-class ClicksStore: SwaltStore {
+class ClicksStore: Store {
     static let instance = ClicksStore()
     
     override init() {
         super.init()
         
-        bindAction(Actions.Increment) { payload in
+        bindAction(CounterActions.Increment) { payload in
             let current = self.state!["count"]! as! Int
             self.state = ["count": current + 1]
         }
@@ -36,6 +36,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func doIt() {
-        Swalt.instance.dispatch(Actions.Increment, payload: nil)
+        Swalt.instance.dispatch(CounterActions.Increment, payload: nil)
     }
 }

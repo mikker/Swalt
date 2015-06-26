@@ -21,7 +21,7 @@ struct Actions {
     static let Increment = "INCREMENT"
 }
 
-class ClicksStore: SwaltStore {
+class ClicksStore: Store {
     static let instance = ClicksStore()
 
     override init() {

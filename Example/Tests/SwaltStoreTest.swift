@@ -2,12 +2,12 @@ import XCTest
 import Dispatcher
 import Swalt
 
-class SwaltStoreTest: XCTestCase {
+class StoreTest: XCTestCase {
     
     var swalt: Swalt!
-    var store: SwaltStore!
+    var store: Store!
     
-    class MySwaltStore: SwaltStore {
+    class MyStore: Store {
         override init() {
             super.init()
             
@@ -23,7 +23,7 @@ class SwaltStoreTest: XCTestCase {
     
     override func setUp() {
         swalt = Swalt.instance
-        store = MySwaltStore()
+        store = MyStore()
     }
     
     func testIncrementState() {
@@ -36,10 +36,10 @@ class SwaltStoreTest: XCTestCase {
     
     func testListen() {
         class Listener {
-            var store: SwaltStore!
+            var store: Store!
             var subscriptionId: String!
             var count: Int = 0
-            init(store: SwaltStore) {
+            init(store: Store) {
                 self.store = store
                 subscriptionId = store.listen(callback)
             }

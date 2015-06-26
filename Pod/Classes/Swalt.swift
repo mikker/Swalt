@@ -9,7 +9,7 @@ public class Swalt : Receiver {
         register()
     }
     
-    public func dispatch(action: String, payload: Any?) {
+    public func dispatch(action: Action, payload: Any?) {
         let message = (action, payload) as Any?
         dispatcher.dispatch(message)
     }
