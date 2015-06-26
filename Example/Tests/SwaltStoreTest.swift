@@ -14,7 +14,7 @@ class StoreTest: XCTestCase {
             super.init(swalt)
             
             bindAction(action) { _ in
-                let current = self.state!["count"]! as! Int
+                let current = self.state["count"]! as! Int
                 self.state = ["count": current + 1]
             }
         }
@@ -31,10 +31,10 @@ class StoreTest: XCTestCase {
     
     func testIncrementState() {
         swalt.dispatch(action, payload: nil)
-        XCTAssertEqual(store.state!["count"] as! Int, 1)
+        XCTAssertEqual(store.state["count"] as! Int, 1)
         
         swalt.dispatch(action, payload: nil)
-        XCTAssertEqual(store.state!["count"] as! Int, 2)
+        XCTAssertEqual(store.state["count"] as! Int, 2)
     }
     
     func testListen() {
@@ -44,11 +44,9 @@ class StoreTest: XCTestCase {
             var count: Int = 0
             init(store: Store) {
                 self.store = store
-                subscriptionId = store.listen(callback)
-            }
-            func callback(state: Any?) {
-                let state = state as! [String: Any?]
-                count = state["count"] as! Int
+                subscriptionId = store.listen { state in
+                    self.count = state["count"] as! Int
+                }
             }
             func unlisten() {
                 store.unlisten(subscriptionId)

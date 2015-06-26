@@ -1,10 +1,10 @@
 PODS:
-  - Dispatcher (0.1.2)
+  - Dispatcher (0.1.3)
   - Swalt (0.1.1):
     - Dispatcher (~> 0.1)
 
 DEPENDENCIES:
-  - Dispatcher (~> 0.1.2)
+  - Dispatcher (~> 0.1)
   - Swalt (from `../`)
 
 EXTERNAL SOURCES:
@@ -12,7 +12,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Dispatcher: 23cca0e9ac5e836c794fc2590f5cd98ca499fb0e
+  Dispatcher: 1f9b7d475f91483644c9e2f3b076ffb4c4934a72
   Swalt: d567e29e8f5d5b470467fab4558b260bb05fafd0
 
 COCOAPODS: 0.37.2

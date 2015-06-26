@@ -2,7 +2,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target 'Swalt_Example' do
-  pod "Dispatcher", "~> 0.1.2"
+  pod "Dispatcher", "~> 0.1"
   pod "Swalt", :path => "../"
 end
 

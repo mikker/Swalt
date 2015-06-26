@@ -10,12 +10,12 @@ class ClicksStore: Store {
         super.init(swalt)
         
         bindAction(CounterActions.Increment) { payload in
-            let current = self.state!["count"]! as! Int
+            let current = self.state["count"]! as! Int
             self.state = ["count": current + 1]
         }
     }
     
-    override func initialState() -> [String: Any?] {
+    override func initialState() -> Store.State {
         return ["count": 0]
     }
 }
@@ -37,7 +37,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         Flux.shared.getStore(ClicksStore).listen { state in
-            let state = state as! [String: Any?]
             let count = state["count"] as! Int
             self.countLabel.text = String(count)
         }

@@ -3,8 +3,10 @@ import Dispatcher
 public class Store : Receiver {
     let swalt: Swalt
     
-    var listeners: [String: Handler] = [:]
-    public var state: [String: Any?]? {
+    var listeners: [String: State -> Void] = [:]
+    
+    public typealias State = [String: Any?]
+    public var state: State {
         didSet {
             self.notifyListeners()
         }
@@ -12,6 +14,7 @@ public class Store : Receiver {
     
     public required init(_ swalt: Swalt) {
         self.swalt = swalt
+        self.state = [:]
 
         super.init()
         
@@ -21,15 +24,14 @@ public class Store : Receiver {
         self.state = self.initialState()
     }
     
-    public func initialState() -> [String: Any?] {
+    public func initialState() -> State {
         return [:]
     }
     
-    public func listen(callback: Any? -> Void) -> String {
+    public func listen(handler: State -> Void) -> String {
         if let id = swalt.dispatcher.tokenGenerator.next() {
-            let handler = Handler(callback)
             listeners[id] = handler
-            handler.call(state) // send current state right away
+            handler(state) // send current state right away
             return id
         }
         
@@ -42,7 +44,7 @@ public class Store : Receiver {
     
     private func notifyListeners() {
         for (_, handler) in listeners {
-            handler.call(self.state)
+            handler(self.state)
         }
     }
 }
