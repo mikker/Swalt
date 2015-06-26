@@ -24,7 +24,7 @@ public class Swalt: Receiver {
     public func addStore(type: Store.Type) -> Store {
         let key = StoreType(type)
         
-        precondition(!self.stores.keys.contains(key), "Store of type \(key) already exists")
+        precondition(!self.stores.keys.contains(key), "Store of type \(key) already added")
         
         let store = type.init(self)
         self.stores[key] = store
