@@ -66,7 +66,9 @@ class ViewController: UIViewController {
 
 ## Todo
 
-- [ ] Snapshots (easily serialize and restore **all** state)
+- [x] Snapshots (easily serialize and restore **all** state)
+- [ ] Dictionaries are weird for states with all the typecasting.. Maybe structs instead?
+- [ ] More examples
 
 ## Requirements
 
