@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Swalt"
-  s.version          = "0.1.1"
+  s.version          = "0.2.0"
   s.license          = 'MIT'
   s.summary          = "Flux implementation in pure Swift 2"
   s.homepage         = "https://github.com/mikker/Swalt"
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.9'
 
-  s.dependency 'Dispatcher', '~> 0.1'
+  s.dependency 'Dispatcher', '~> 0.1.0'
 
   s.source_files = 'Pod/Classes/**/*'
   s.requires_arc = true
