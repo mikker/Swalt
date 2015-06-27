@@ -11,7 +11,7 @@ class SwaltTest: XCTestCase {
         swalt = Swalt()
     }
     
-    func testSwaltDispatch() {
+    func testDispatch() {
         let dispatcher = swalt.dispatcher!
         XCTAssertNotNil(dispatcher)
         
@@ -28,7 +28,7 @@ class SwaltTest: XCTestCase {
         swalt.dispatch(action, payload: ["test": 1])
     }
     
-    func testSwaltBindAction() {
+    func testBindAction() {
         func callback(payload: Any?) {
             let payload = payload as! [String: Int]
             XCTAssertEqual(payload["test"]!, 1)
@@ -37,5 +37,23 @@ class SwaltTest: XCTestCase {
         
         let payload: [String: Int] = ["test": 1]
         swalt.dispatch(action, payload: payload)
+    }
+    
+    func testSnapshot() {
+        class CandyStore: Store {
+            override var initialState: State {
+                return [:]
+            }
+        }
+        let store = swalt.addStore(CandyStore)
+        store.state = ["numbers": 1]
+        let snapshot = swalt.takeSnapshot()
+        
+        let newSwalt = Swalt()
+        newSwalt.addStore(CandyStore)
+        newSwalt.bootstrap(snapshot)
+        let newStore = newSwalt.getStore(CandyStore)
+        
+        XCTAssertEqual(newStore.state["numbers"] as! Int, 1)
     }
 }

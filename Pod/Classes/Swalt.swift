@@ -12,6 +12,8 @@ public class Swalt: Receiver {
         register()
     }
     
+    // Dispatch
+    
     public func dispatch(action: Action, payload: Any?) {
         dispatch(action.name, payload: payload)
     }
@@ -20,6 +22,8 @@ public class Swalt: Receiver {
         let message = (action, payload) as Any?
         dispatcher.dispatch(message)
     }
+    
+    // Stores
     
     public func addStore(type: Store.Type) -> Store {
         let key = StoreType(type)
@@ -41,5 +45,37 @@ public class Swalt: Receiver {
         }
     }
     
-
+    // Snapshots
+    
+    public func takeSnapshot() -> String {
+        let initial: [StoreType: State] = [:]
+        let snapshot = stores.reduce(initial, combine: { (var snapshot, elm) in
+            snapshot[elm.0] = elm.1.state
+            return snapshot
+        })
+        
+        do {
+            let data = try NSJSONSerialization.dataWithJSONObject(snapshot, options: NSJSONWritingOptions())
+            let string = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
+            return string
+        } catch {
+            preconditionFailure("Failed to snapshot to JSON")
+        }
+    }
+    
+    public func bootstrap(snapshot: String) {
+        do {
+            let data = snapshot.dataUsingEncoding(NSUTF8StringEncoding)
+            let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+            let snapshot = json as! [StoreType: State]
+            for (key, state) in snapshot {
+                if let store = stores[key] {
+                    store.state = state
+                }
+            }
+        } catch {
+            preconditionFailure("Failed to bootstrap from snapshot: \(error)")
+        }
+    }
+    
 }

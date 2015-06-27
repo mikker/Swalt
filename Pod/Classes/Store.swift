@@ -1,6 +1,6 @@
 import Dispatcher
 
-public typealias State = [String: Any?]
+public typealias State = [String: AnyObject]
 
 public class Store : Receiver {
     let swalt: Swalt
